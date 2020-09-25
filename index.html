@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+	<!-- seperated css for overall, weather, currency -->
+	<link rel="stylesheet" href="./assets/css/style.css" />
+	<link rel="stylesheet" href="./assets/css/weather.css">
+	<link rel="stylesheet" href="./assets/css/currency.css">
+	<link rel="stylesheet" href="./assets/css/itinerary.css">
+	<link rel="stylesheet" href="./assets/css/places.css">
+	<!-- add budget.css -->
+	
+	
+	<!-- <font> -->
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+	<title>PlaniT</title>
+</head>
+
+<body>
+	<header class="jumbotron">
+		<div class="font-italic font-weight-bold text-white display-3">
+			<img class="headertext" src="./assets/image/planIt-Logo.png" alt="PlaniT!">
+			<img class="bgPicture" src="./assets/image/header-img.jpeg" alt="Globe header image" style="width:100%;height: 500px;">
+		</div>
+		<br>
+		<h1 class="font-weight-bold lead headertext2">Your Trip Itinerary Organized</h1>
+		<p id="currentDay" class="font-weight-bold lead headertext3"></p>
+	</header>
+
+<!-- itinerary -->
+	<div class = "itineraryCon clearfix col-6">
+	<!-- Day blocks go here -->
+	<div id="feedback" class="feedback hide"></div>
+	<div class=" dropdownCon">
+		<div class="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				How Long Is Your Trip?
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<button class="dropdown-item threeDay">3-Day</button>
+				<button class="dropdown-item fiveDay">5-Day</button>
+				<button class="dropdown-item sevenDay">7-Day</button>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="container dayOne">
+		<div id="dayOne" class="row day-block">
+			<div class="col-md-1 day">
+				Day 1
+			</div>
+			<textarea class="col-md-10 description">
+            </textarea>
+			<button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+		</div>
+	</div>
+	<div class="container dayTwo">
+		<div id="dayTwo" class="row day-block">
+			<div class="col-md-1 day">
+				Day 2
+			</div>
+			<textarea class="col-md-10 description">
+            </textarea>
+			<button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+		</div>
+	</div>
+	<div class="container dayThree">
+		<div id="dayThree" class="row day-block">
+			<div class="col-md-1 day">
+				Day 3
+			</div>
+			<textarea class="col-md-10 description">
+            </textarea>
+			<button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+		</div>
+	</div>
+	<div class="container dayFour">
+		<div id="dayFour" class="row day-block">
+			<div class="col-md-1 day">
+				Day 4
+			</div>
+			<textarea class="col-md-10 description">
+            </textarea>
+			<button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+		</div>
+	</div>
+	<div class="container dayFive">
+		<div id="dayFive" class="row day-block">
+			<div class="col-md-1 day">
+				Day 5
+			</div>
+			<textarea class="col-md-10 description">
+            </textarea>
+			<button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+		</div>
+	</div>
+	<div class="container daySix">
+		<div id="daySix" class="row day-block">
+			<div class="col-md-1 day">
+				Day 6
+			</div>
+			<textarea class="col-md-10 description">
+            </textarea>
+			<button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+		</div>
+	</div>
+	<div class="container daySeven">
+		<div id="day7" class="row day-block">
+			<div class="col-md-1 day">
+				Day 7
+			</div>
+			<textarea class="col-md-10 description">
+            </textarea>
+			<button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+		</div>
+	</div>
+	<br>
+
+
+	<!-- modal added  -->
+	<!-- Button trigger modal -->
+	<button id="clear" type="button" class="btn btn-primary clearBtn clearBtn:Hover" data-toggle="modal"
+		data-target="#staticBackdrop">
+		Clear Itinerary
+	</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Decided To Wing It?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Act Like a Local And Hit Ok to Clear Or Hit Cancel And Stick To The Schedule?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn modalBtn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn modalBtn btn-secondary" id="confirmClear">Clear it</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- places search -->
+<div class="fourSquare clearfix col-6">
+		
+	<div class="form-group" id="names">
+		<h2>Be in The Know Before You Go.</h2>
+		<form>
+			<div class="searchArea">
+			<label for="city or country visiting">Get The Stats: </label>
+			<input id="placeInput" placeholder="Search by City/Country">
+			<button class="submitCity"><i class="fas fa-search"></i></button>
+		</form>
+	</div>
+<div class="scroller" id="resultsContainer"></div>
+</div>	
+</div>
+</div>
+
+
+
+
+
+
+				<br>
+				<br>
+
+		
+
+	<div class="curCon clearfix col-6">
+		<h2> Leaving the Country? ...Don't Forget to Check Your Currency</h2>
+		<br><br>
+		<div class="curCal clearfix">
+				<div class="currency">
+					<select id="from_currency">
+						<option value="AED">AED</option>
+						<option value="ARS">ARS</option>
+						<option value="AUD">AUD</option>
+						<option value="BGN">BGN</option>
+						<option value="BRL">BRL</option>
+						<option value="BSD">BSD</option>
+						<option value="CAD">CAD</option>
+						<option value="CHF">CHF</option>
+						<option value="CLP">CLP</option>
+						<option value="CNY">CNY</option>
+						<option value="COP">COP</option>
+						<option value="CZK">CZK</option>
+						<option value="DKK">DKK</option>
+						<option value="DOP">DOP</option>
+						<option value="EGP">EGP</option>
+						<option value="EUR">EUR</option>
+						<option value="FJD">FJD</option>
+						<option value="GBP">GBP</option>
+						<option value="GTQ">GTQ</option>
+						<option value="HKD">HKD</option>
+						<option value="HRK">HRK</option>
+						<option value="HUF">HUF</option>
+						<option value="IDR">IDR</option>
+						<option value="ILS">ILS</option>
+						<option value="INR">INR</option>
+						<option value="ISK">ISK</option>
+						<option value="JPY">JPY</option>
+						<option value="KRW">KRW</option>
+						<option value="KZT">KZT</option>
+						<option value="MXN">MXN</option>
+						<option value="MYR">MYR</option>
+						<option value="NOK">NOK</option>
+						<option value="NZD">NZD</option>
+						<option value="PAB">PAB</option>
+						<option value="PEN">PEN</option>
+						<option value="PHP">PHP</option>
+						<option value="PKR">PKR</option>
+						<option value="PLN">PLN</option>
+						<option value="PYG">PYG</option>
+						<option value="RON">RON</option>
+						<option value="RUB">RUB</option>
+						<option value="SAR">SAR</option>
+						<option value="SEK">SEK</option>
+						<option value="SGD">SGD</option>
+						<option value="THB">THB</option>
+						<option value="TRY">TRY</option>
+						<option value="TWD">TWD</option>
+						<option value="UAH">UAH</option>
+						<option value="USD" selected>USD</option>
+						<option value="UYU">UYU</option>
+						<option value="VND">VND</option>
+						<option value="ZAR">ZAR</option>
+					</select>
+					<input type="number" id="from_ammount" placeholder="0" value=1 />
+				</div>
+				<div class="middle">
+					<button id="exchange">
+						<i class="fas fa-exchange-alt"></i>
+					</button>
+					<div class="rate" id="rate"></div>
+				</div>
+				<div class="currency">
+					<select id="to_currency">
+						<option value="AED">AED</option>
+						<option value="ARS">ARS</option>
+						<option value="AUD">AUD</option>
+						<option value="BGN">BGN</option>
+						<option value="BRL">BRL</option>
+						<option value="BSD">BSD</option>
+						<option value="CAD">CAD</option>
+						<option value="CHF">CHF</option>
+						<option value="CLP">CLP</option>
+						<option value="CNY">CNY</option>
+						<option value="COP">COP</option>
+						<option value="CZK">CZK</option>
+						<option value="DKK">DKK</option>
+						<option value="DOP">DOP</option>
+						<option value="EGP">EGP</option>
+						<option value="EUR" selected>EUR</option>
+						<option value="FJD">FJD</option>
+						<option value="GBP">GBP</option>
+						<option value="GTQ">GTQ</option>
+						<option value="HKD">HKD</option>
+						<option value="HRK">HRK</option>
+						<option value="HUF">HUF</option>
+						<option value="IDR">IDR</option>
+						<option value="ILS">ILS</option>
+						<option value="INR">INR</option>
+						<option value="ISK">ISK</option>
+						<option value="JPY">JPY</option>
+						<option value="KRW">KRW</option>
+						<option value="KZT">KZT</option>
+						<option value="MXN">MXN</option>
+						<option value="MYR">MYR</option>
+						<option value="NOK">NOK</option>
+						<option value="NZD">NZD</option>
+						<option value="PAB">PAB</option>
+						<option value="PEN">PEN</option>
+						<option value="PHP">PHP</option>
+						<option value="PKR">PKR</option>
+						<option value="PLN">PLN</option>
+						<option value="PYG">PYG</option>
+						<option value="RON">RON</option>
+						<option value="RUB">RUB</option>
+						<option value="SAR">SAR</option>
+						<option value="SEK">SEK</option>
+						<option value="SGD">SGD</option>
+						<option value="THB">THB</option>
+						<option value="TRY">TRY</option>
+						<option value="TWD">TWD</option>
+						<option value="UAH">UAH</option>
+						<option value="USD">USD</option>
+						<option value="UYU">UYU</option>
+						<option value="VND">VND</option>
+						<option value="ZAR">ZAR</option>
+					</select>
+					<input type="number" id="to_ammount" placeholder="0" />
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+
+<!-- budget col -->
+<!-- can you make these show up next to eachother> -->
+	<div class="budgetCtn col-sm col-6">
+		<div class="budget-section">
+	
+			<div class="budget col col-md col-sm">
+			<h4>budget</h4>
+			<p class="amount">$ <span id="budgetAmount">0</span></p>
+	
+			<div class="expenses col col-md col-sm">
+			<h4>expenses</h4>
+			<p class="exp-amount">$ <span id="expensesAmount">0</span></p>
+
+	
+			<div class="balance col col-md col-sm">
+			<h4>balance</h4>
+			<p class="amount bala">$ <span id="balanceAmount">0</span></p>
+			</div>
+
+			<!-- have this under the total... in the square next to the cur -->
+		<div class="budget-form col-6" id="budgetform">
+			<form id="addForm">
+			<label for=""> Make a budget</label> <br />
+			<input type="number" id="number" /> <br />
+			<button type="submit">Add Budget</button>
+			</form>
+		</div>
+		<div class="expense-form col-6" id="expense-form">
+			<form action="" id="expForm">
+		
+		<div class="">
+				<label for="">please enter your expense</label> <br />
+				<input type="text" id="expName" />
+		</div>
+		<div class="">
+				<label for="">please enter expense amount</label> <br />
+				<input type="number" id="expNumber" />
+		</div>
+		<button type="submit" id="submitExpen">Add expense</button>
+			</form>
+		</div>
+		<div class="edit-form col-6" id="editForm">
+			<form action="" id="saveEdit">
+			<div class="">
+			<label for="">Edit your expense</label> <br />
+			<input type="text" id="editExpName" />
+			</div>
+			<div class="">
+			<label for="">Edit expense amount</label> <br />
+			<input type="number" id="editExpNumber" />
+			</div>
+			<button type="submit">Save changes</button>
+			</form>
+		</div>
+		</div>
+	
+	</div>
+	<hr>
+	<br>
+
+	<!-- weather -->
+
+	<div class="weather">
+		<!-- create container for forecast -->
+		<div class="forecastCtn"></div>
+		<div class="five-day-div" id=forecast></div>
+		<div class="card"></div>
+	</div>
+
+
+
+
+	<footer>
+		<div class="fb-share-button" data-href="https://angierys22.github.io/planit" data-layout="button"
+			data-size="small"><a target="_blank"
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fangierys22.github.io%2Fplanit&amp;src=sdkpreparse"
+				class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-f"></i>Share to Facebook</a></div>
+		<br>
+		<p>© planiT! 2020 | All rights reserved.</p>
+	</footer>
+	<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/2e0dc01201.js" crossorigin="anonymous"></script>
+	<!-- index js -->
+	<script src="./assets/js/itinerary.js"></script>
+	<!-- foursquare js -->
+	<script src="./assets/js/places.js"></script>
+		<!-- currency js -->
+		<script src="./assets/js/currency.js"></script>
+	<!-- Code to the Weather JavaScript File -->
+	<script src="./assets/js/weather.js"></script>
+	<!-- budget js -->
+	<script src="./assets/js/budget.js"></script>
+</body>
+
+</html>
