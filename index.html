@@ -173,11 +173,6 @@
 </div>
 </div>
 
-
-
-
-
-
 				<br>
 				<br>
 
@@ -311,76 +306,29 @@
 		</div>
 
 	</div>
-	
-
-<!-- budget col -->
-<!-- can you make these show up next to eachother> -->
-	<div class="budgetCtn col-sm col-6">
-		<div class="budget-section">
-	
-			<div class="budget col col-md col-sm">
-			<h4>budget</h4>
-			<p class="amount">$ <span id="budgetAmount">0</span></p>
-	
-			<div class="expenses col col-md col-sm">
-			<h4>expenses</h4>
-			<p class="exp-amount">$ <span id="expensesAmount">0</span></p>
-
-	
-			<div class="balance col col-md col-sm">
-			<h4>balance</h4>
-			<p class="amount bala">$ <span id="balanceAmount">0</span></p>
-			</div>
-
-			<!-- have this under the total... in the square next to the cur -->
-		<div class="budget-form col-6" id="budgetform">
-			<form id="addForm">
-			<label for=""> Make a budget</label> <br />
-			<input type="number" id="number" /> <br />
-			<button type="submit">Add Budget</button>
-			</form>
-		</div>
-		<div class="expense-form col-6" id="expense-form">
-			<form action="" id="expForm">
-		
-		<div class="">
-				<label for="">please enter your expense</label> <br />
-				<input type="text" id="expName" />
-		</div>
-		<div class="">
-				<label for="">please enter expense amount</label> <br />
-				<input type="number" id="expNumber" />
-		</div>
-		<button type="submit" id="submitExpen">Add expense</button>
-			</form>
-		</div>
-		<div class="edit-form col-6" id="editForm">
-			<form action="" id="saveEdit">
-			<div class="">
-			<label for="">Edit your expense</label> <br />
-			<input type="text" id="editExpName" />
-			</div>
-			<div class="">
-			<label for="">Edit expense amount</label> <br />
-			<input type="number" id="editExpNumber" />
-			</div>
-			<button type="submit">Save changes</button>
-			</form>
-		</div>
-		</div>
-	
-	</div>
 	<hr>
 	<br>
 
-	<!-- weather -->
 
-	<div class="weather">
-		<!-- create container for forecast -->
-		<div class="forecastCtn"></div>
-		<div class="five-day-div" id=forecast></div>
-		<div class="card"></div>
+	<div class="weather clearfix">
+		<!-- weather -->
+	<!-- Search Container present/past btns -->
+                
+                <!-- create container for current weather -->
+                <div class = "container currentWeather col-6">
+                <div class="md-3 col-lg-10 pt-3 content" id=today></div>
+                </div>
+
+                <!-- create container for forecast -->
+                <div class = "container forecastCon">
+                <div class="five-day-div bg-light p-3 m-3 w-100" id=forecast>
+                <div class = "card">	
+	
+
 	</div>
+</div>
+</div>
+</div>
 
 
 

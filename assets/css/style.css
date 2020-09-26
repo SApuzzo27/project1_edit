@@ -55,14 +55,8 @@ button, input {
 
 
 
-.col-md-10 {
-  -ms-flex: 0 0 83.333333%;
-  flex: 0 0 83.333333%;
-  max-width: 83.333333%;
-}
-
 .Card {
-  border: 1px solid #ffffff;
+  border: 1px solid white;
   width: auto;
 }
 
@@ -75,5 +69,4 @@ footer {
   position: absolute;
   height: 15%;
   margin-top: 75px;
-
 }

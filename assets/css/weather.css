@@ -1,16 +1,20 @@
 
-
+#dashboard{
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: rgb(212, 82, 53);
+    background-image:url("./images/weatherbackground.png");
+    background-size: cover;
+    height: 100%;
+}
 .weather {
+    background-color: white;
     padding-top: 5%;
-    width: 85%;
-    display: inline-table;
-    margin-left: 15%;
-    padding-top: 2%
 } 
 
 .card-body{
     background-color:  #c1c2c3;
     color: #000000;
-    width: 100;
-}
+    width: auto;
 
+}
