@@ -36,7 +36,7 @@ $(document).ready(function() {
         // var bestPhoto = data.response.venue.bestPhoto.prefix+data.response.venue.bestPhoto.source.suffix;
 
         var card = $("<div>").addClass("card");
-        var title = $("<h3>").addClass("card-title").text(name);
+        var title = $("<h4>").addClass("card-title").text(name);
         card.append(title);
         var body = $("<div>").addClass("card-body");
         var rating = $("<h6>").addClass("card-text").text("Rating: " + rating);
