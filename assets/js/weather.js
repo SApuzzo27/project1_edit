@@ -1,7 +1,7 @@
 $(document).ready(function() {
     //Api Key
     var apiKey = "188366c4a74fbb8bc6a6f7d868a6bfa2";
-    var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
+    // var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
 
         // create click event for city search 
         $(".submitCity").on("click", function () {
@@ -172,18 +172,18 @@ $(document).ready(function() {
     
     
     
-    // get any history
-    var history = JSON.parse(window.localStorage.getItem("history")) || [];
-    // console.log(history)
-    if (history.length > 0) {
-    getWeather(history[0]);
-    }
-    else {
+    // // get any history
+    // var history = JSON.parse(window.localStorage.getItem("history")) || [];
+    // // console.log(history)
+    // if (history.length > 0) {
+    // getWeather(history[0]);
+    // }
+    // else {
         
-    }
+    // }
     
-    for (var i = 0; i < history.length; i++) {
-        createRow(history[i]);
-    }
+    // for (var i = 0; i < history.length; i++) {
+    //     createRow(history[i]);
+    // }
     
     });
